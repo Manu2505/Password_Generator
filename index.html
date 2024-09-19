@@ -11,7 +11,29 @@
 
     </header>
     <main>
-
+        <div>
+            <label id="pwd_label">Here could be your Password. Generate it now!</label>
+            <button id="generate_button">Generate</button>
+        </div>
+        <table>
+            <tr>
+                <td><label for="cap_letters">Capitalized Letters</label></td>
+                <td><label for="small_letters">Non-capitalized Letters</label></td>
+                <td><label for="numbers">Numbers</label></td>
+                <td><label for="special_chars">Special Characters</label></td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" id="cap_letters" name="cap_letters"></td>
+                <td><input type="checkbox" id="small_letters" name="small_letters"></td>
+                <td><input type="checkbox" id="numbers" name="numbers"></td>
+                <td><input type="checkbox" id="special_chars" name="special_chars"></td>
+            </tr>
+        </table>
+        <div>
+            <button id="import_file">Import</button>
+            <button id="export_file">Export</button>
+        </div>
+        <table id="password_table"></table>
     </main>
     <footer>
 
