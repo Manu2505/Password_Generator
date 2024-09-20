@@ -2,6 +2,8 @@
 <html>
 <head>
     <title>Password Generator</title>
+    <link href="css_files/stylesheet.css" rel="stylesheet">
+    <script src="js_files/script.js"></script>
 </head>
 <body>
     <header>
@@ -9,13 +11,14 @@
     </header>
     <main>
         <div>
-            <label id="pwd_label">Here could be your Password. Generate it now!</label>
+            <p id="pwd_label">Here could be your Password. Generate it now!</p>
             <button id="generate_button">Generate</button>
         </div>
         <table>
             <tr>
                 <td><label for="leng_pwd">How longs should your Password be?</label></td>
-                <td><input type="range" id="leng_pwd" name="leng_pwd"></td>
+                <td><input type="range" id="leng_pwd" name="leng_pwd" min="1" max="100" value="20"></td>
+                <td><p id="show_range"></p></td>
             </tr>
             <tr>
                 <td><label for="cap_letters">Capitalized Letters</label></td>
