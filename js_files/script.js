@@ -8,16 +8,16 @@ window.addEventListener("load", function() {
     var leng_pwd_range = this.document.getElementById("leng_pwd");
     var show_range = this.document.getElementById("show_range");
 
-    generate_button.addEventListener("click", generate_password);
-    leng_pwd_range.addEventListener("change", show_value_of_range(leng_pwd_range));
+    generate_button.addEventListener(this.onclick, generate_password(pwd_label));
+    leng_pwd_range.addEventListener(this.onchange, show_value_of_range(leng_pwd_range));
 });
 
 
 function show_value_of_range (range) {
-show_range.innerHTML = range.value;
+    show_range.innerHTML = range.value;
 }
 
-function generate_password () {
+function generate_password (pwd_label) {
     var counter = 0;
     var result = "Hello";
 
