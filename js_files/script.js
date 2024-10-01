@@ -1,39 +1,35 @@
-window.addEventListener("load", function() {
-    var generate_button = this.document.getElementById("generate_button");
-    var pwd_label = this.document.getElementById("pwd_label");
-    var cap_letters = this.document.getElementById("cap_letters");
-    var small_letters = this.document.getElementById("small_letters");
-    var numbers = this.document.getElementById("numbers");
-    var special_chars = this.document.getElementById("special_chars");
-    var leng_pwd_range = this.document.getElementById("leng_pwd");
-    var show_range = this.document.getElementById("show_range");
+const small_char = "abcdefghijklmnopqrstuvwxyz".split("");
+const large_char = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
+const numbers = "0123456789".split("");
+const special_chars = "!@#$%^&*()_+{}|:<>?".split("");
 
-    generate_button.addEventListener("click", generate_password(pwd_label));
-    leng_pwd_range.addEventListener("change", show_value_of_range(leng_pwd_range));
-});
+window.addEventListener("load", function () {});
 
-
-function show_value_of_range (range) {
-    show_range.innerHTML = range.valueAsNumber;
+function show_value_of_range(range) {
+  document.getElementById("show_range").innerHTML = range.valueAsNumber;
 }
 
-function generate_password (pwd_label) {
-    var counter = 0;
-    var result = "Hello";
+function generate_password() {
+  var includeUppercase = document.getElementById("cap_letters").ckecked;
+  var includeLowercase = document.getElementById("small_letters").ckecked;
+  var includeNumbers = document.getElementById("numbers").ckecked;
+  var includeSpecialChars = document.getElementById("special_chars").ckecked;
+  var length = document.getElementById("show_range").valueAsNumber;
 
-    if (counter == 0) {
-        counter = counter + 1;
-    } else {
-        result = "NExt";
-    }
-    
+  console.log("length: ", length);
+  console.log("includeUppercase: ", includeUppercase);
 
-    pwd_label.innerHTML = result;
+  let allChars = "";
+  if (includeUppercase) allChars += large_char;
+  if (includeLowercase) allChars += small_char;
+  if (includeNumbers) allChars += numbers;
+  if (includeSpecialChars) allChars += special_chars;
 
+  let password = "";
+  for (let i = 0; i < length; i++) {
+    const randomIndex = Math.floor(Math.random() * allChars.length);
+    password += allChars[randomIndex];
+  }
+
+  document.getElementById("pwd_label").innerHTML = password;
 }
-
-
-
-const small_char = "abcdefghijklmnopqrstuvwxyz";
-const large_char = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-const numbers = "0123456789";
