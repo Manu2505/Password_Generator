@@ -41,3 +41,4 @@ function generate_password() {
 
   document.getElementById("pwd_label").innerHTML = password;
 }
+
