@@ -11,8 +11,11 @@
     </header>
     <main>
         <div>
+            <input type="text" id="nameOfPassword" name="nameOfPassword">
+            <label for="nameOfPassword">The name of your password</label>
             <p id="pwd_label">Here could be your Password. Generate it now!</p>
             <button onclick="generate_password()" id="generate_button">Generate</button>
+            <button onclick="save_and_write_password()" id="save_button">Save</button>
         </div>
         <table>
             <tr>
@@ -37,7 +40,15 @@
             <button id="import_file">Import</button>
             <button id="export_file">Export</button>
         </div>
-        <table id="password_table"></table>
+        <table id="password_table">
+            <thead>
+              <tr>
+                <th>Password Name</th>
+                <th>Password</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
     </main>
     <footer>
 
