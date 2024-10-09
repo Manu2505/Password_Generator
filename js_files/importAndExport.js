@@ -1,3 +1,5 @@
+//Import doesnt work yet
+
 function importData() {
   var fileInput = document.getElementById('jsonFileInput');
   var file = fileInput.files[0];
