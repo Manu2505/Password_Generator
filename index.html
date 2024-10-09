@@ -14,34 +14,34 @@
         <div>
             <input type="text" id="nameOfPassword" name="nameOfPassword">
             <label for="nameOfPassword">The name of your password</label>
-            <p id="pwd_label">Here could be your Password. Generate it now!</p>
-            <button onclick="generate_password()" id="generate_button">Generate</button>
-            <button onclick="save_and_write_password()" id="save_button">Save</button>
+            <p id="passwordLabel">Here could be your Password. Generate it now!</p>
+            <button onclick="generatePassword()" id="generateButton">Generate</button>
+            <button onclick="saveAndWritePassword()" id="saveButton">Save</button>
         </div>
         <table>
             <tr>
-                <td><label for="leng_pwd">How longs should your Password be?</label></td>
-                <td><input onchange="show_value_of_range(this)" type="range" id="leng_pwd" name="leng_pwd" min="1" max="100" value="20"></td>
-                <td><p id="show_range">20</p></td>
+                <td><label for="lengPassword">How longs should your Password be?</label></td>
+                <td><input onchange="showValueOfRange(this)" type="range" id="lengPassword" name="lengPassword" min="1" max="100" value="20"></td>
+                <td><p id="showRange">20</p></td>
             </tr>
             <tr>
-                <td><label for="cap_letters">Capitalized Letters</label></td>
-                <td><label for="small_letters">Non-capitalized Letters</label></td>
+                <td><label for="capLetters">Capitalized Letters</label></td>
+                <td><label for="smallLetters">Non-capitalized Letters</label></td>
                 <td><label for="numbers">Numbers</label></td>
-                <td><label for="special_chars">Special Characters</label></td>
+                <td><label for="specialChars">Special Characters</label></td>
             </tr>
             <tr>
-                <td><input type="checkbox" id="cap_letters" name="cap_letters" ></td>
-                <td><input type="checkbox" id="small_letters" name="small_letters" checked></td>
+                <td><input type="checkbox" id="capLetters" name="capLetters" ></td>
+                <td><input type="checkbox" id="smallLetters" name="smallLetters" checked></td>
                 <td><input type="checkbox" id="numbers" name="numbers" ></td>
-                <td><input type="checkbox" id="special_chars" name="special_chars" ></td>
+                <td><input type="checkbox" id="specialChars" name="specialChars" ></td>
             </tr>
         </table>
         <div>
-            <button id="import_file">Import</button>
-            <button id="export_file">Export</button>
+            <button id="importFile">Import</button>
+            <button id="exportFile">Export</button>
         </div>
-        <table id="password_table">
+        <table id="passwordTable">
             <thead>
               <tr>
                 <th>Password Name</th>

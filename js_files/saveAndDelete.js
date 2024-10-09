@@ -1,6 +1,6 @@
-function save_password() {
+function savePassword() {
     var passwordName = document.getElementById("nameOfPassword").value;
-    var password = document.getElementById("pwd_label").innerHTML;
+    var password = document.getElementById("passwordLabel").innerHTML;
     
     if (passwordName == null || passwordName == "") {
       alert("Please enter a name for the password");
@@ -14,11 +14,11 @@ function save_password() {
     return passwordData;
   }
   
-  function write_json(password_json) {
+  function writeJson(password_json) {
     var passwordName = password_json.name;
     var password = password_json.password;
   
-    var table = document.getElementById("password_table").getElementsByTagName('tbody')[0];
+    var table = document.getElementById("passwordTable").getElementsByTagName('tbody')[0];
     var newRow = table.insertRow(-1);
   
     var nameCell = newRow.insertCell(0);
@@ -28,9 +28,9 @@ function save_password() {
     passwordCell.innerHTML = password;
   }
   
-  function save_and_write_password() {
-    var passwordData = save_password();
+  function saveAndWritePassword() {
+    var passwordData = savePassword();
     if (passwordData != null) {
-      write_json(passwordData);
+      writeJson(passwordData);
     }
   }

@@ -5,15 +5,15 @@ const special_chars = "!@#$%^&*()_+{}|:<>?";
 
 //window.addEventListener("load", function () {});
 
-function show_value_of_range(range) {
-  document.getElementById("show_range").innerHTML = range.valueAsNumber;
+function showValueOfRange(range) {
+  document.getElementById("showRange").innerHTML = range.valueAsNumber;
 }
 
-function generate_password() {
-  var includeUppercase = document.getElementById("cap_letters").checked;
-  var includeLowercase = document.getElementById("small_letters").checked;
+function generatePassword() {
+  var includeUppercase = document.getElementById("capLetters").checked;
+  var includeLowercase = document.getElementById("smallLetters").checked;
   var includeNumbers = document.getElementById("numbers").checked;
-  var includeSpecialChars = document.getElementById("special_chars").checked;
+  var includeSpecialChars = document.getElementById("specialChars").checked;
 
   if (
     includeLowercase == false &&
@@ -21,7 +21,7 @@ function generate_password() {
       includeNumbers == false &&
       includeSpecialChars == false
   ) {
-    return (document.getElementById("pwd_label").innerHTML =
+    return (document.getElementById("passwordLabel").innerHTML =
       "Please select at least one option");
   }
 
@@ -31,7 +31,7 @@ function generate_password() {
   if (includeNumbers) allChars += numbers;
   if (includeSpecialChars) allChars += special_chars;
 
-  var length = document.getElementById("leng_pwd").valueAsNumber;
+  var length = document.getElementById("lengPassword").valueAsNumber;
 
   let password = "";
   for (let i = 0; i < length; i++) {
@@ -39,6 +39,6 @@ function generate_password() {
     password += allChars[randomIndex];
   }
 
-  document.getElementById("pwd_label").innerHTML = password;
+  document.getElementById("passwordLabel").innerHTML = password;
 }
 
