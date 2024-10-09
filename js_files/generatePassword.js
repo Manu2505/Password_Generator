@@ -17,9 +17,9 @@ function generatePassword() {
 
   if (
     includeLowercase == false &&
-      includeUppercase == false &&
-      includeNumbers == false &&
-      includeSpecialChars == false
+    includeUppercase == false &&
+    includeNumbers == false &&
+    includeSpecialChars == false
   ) {
     return (document.getElementById("passwordLabel").innerHTML =
       "Please select at least one option");
@@ -41,4 +41,3 @@ function generatePassword() {
 
   document.getElementById("passwordLabel").innerHTML = password;
 }
-
