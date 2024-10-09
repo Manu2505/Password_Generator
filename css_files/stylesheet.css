@@ -66,6 +66,9 @@ label {
 input[type="range"] {
     width: 100%;
 }
+input[type="checkbox"] {
+    background-color: green;
+}
 
 #show_range {
     font-weight: bold;

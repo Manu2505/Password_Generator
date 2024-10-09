@@ -23,7 +23,9 @@ function savePassword() {
   
     var nameCell = newRow.insertCell(0);
     var passwordCell = newRow.insertCell(1);
+    var deleteCell = newRow.insertCell(2);
   
+    deleteCell.innerHTML = '<button onclick="deleteRow(this)">Delete</button>';
     nameCell.innerHTML = passwordName;
     passwordCell.innerHTML = password;
   }
@@ -33,4 +35,9 @@ function savePassword() {
     if (passwordData != null) {
       writeJson(passwordData);
     }
+  }
+
+  function deleteRow(row) {
+    var i = row.rowIndex;
+    document.getElementById("passwordTable").deleteRow(i);
   }

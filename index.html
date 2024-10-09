@@ -5,6 +5,7 @@
     <link href="css_files/stylesheet.css" rel="stylesheet">
     <script src="js_files/generatePassword.js"></script>
     <script src="js_files/saveAndDelete.js"></script>
+    <script src="js_files/importAndExport.js"></script>
 </head>
 <body>
     <header>
@@ -38,8 +39,8 @@
             </tr>
         </table>
         <div>
-            <button id="importFile">Import</button>
-            <button id="exportFile">Export</button>
+            <button onclick="importData()" id="importFile">Import</button>
+            <button onclick="exportData()" id="exportFile">Export</button>
         </div>
         <table id="passwordTable">
             <thead>
