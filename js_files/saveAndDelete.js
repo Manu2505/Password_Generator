@@ -14,13 +14,15 @@ function savePassword() {
   return passwordData;
 }
 
-function writeJson(password_json) {
-  var passwordName = password_json.name;
-  var password = password_json.password;
-
+function displayPassword(password_json) {
   var table = document
     .getElementById("passwordTable")
     .getElementsByTagName("tbody")[0];
+
+  insertDataInTable(table, password_json);
+}
+
+function insertDataInTable(table, password_json) {
   var newRow = table.insertRow(-1);
 
   var nameCell = newRow.insertCell(0);
@@ -28,14 +30,14 @@ function writeJson(password_json) {
   var deleteCell = newRow.insertCell(2);
 
   deleteCell.innerHTML = '<button onclick="deleteRow(this)">Delete</button>';
-  nameCell.innerHTML = passwordName;
-  passwordCell.innerHTML = password;
+  nameCell.innerHTML = password_json.name;
+  passwordCell.innerHTML = password_json.password;
 }
 
 function saveAndWritePassword() {
   var passwordData = savePassword();
   if (passwordData != null) {
-    writeJson(passwordData);
+    displayPassword(passwordData);
   }
 }
 

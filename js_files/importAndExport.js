@@ -1,14 +1,14 @@
-//Import doesnt work yet
-
 function importData() {
-  var fileInput = document.getElementById("jsonFileInput");
+  var fileInput = document.getElementById("fileInput");
   var file = fileInput.files[0];
 
   if (file) {
+    console.log("File selected: ", file.name);
     var reader = new FileReader();
     reader.onload = function (e) {
       var contents = e.target.result;
       var jsonData = JSON.parse(contents);
+      console.log("Data imported: ", jsonData);
       displayData(jsonData);
     };
     reader.readAsText(file);
@@ -22,17 +22,8 @@ function displayData(data) {
     .getElementById("passwordTable")
     .getElementsByTagName("tbody")[0];
 
-  // Clear existing table rows
-  table.innerHTML = "";
-
-  data.forEach(function (item) {
-    var newRow = table.insertRow();
-
-    var nameCell = newRow.insertCell(0);
-    var passwordCell = newRow.insertCell(1);
-
-    nameCell.innerHTML = item.name;
-    passwordCell.innerHTML = item.password;
+  data.forEach(function (jsonData) {
+    insertDataInTable(table, jsonData);
   });
 }
 
