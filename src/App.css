@@ -1,38 +1,121 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  margin: 0;
+  padding: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  height: 100vh;
+}
+
+main {
+  background-color: white;
+  padding: 2em;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 80%;
+  max-width: 600px;
+  text-align: center;
+}
+
+#pwd_label {
+  font-size: 1.2em;
+  margin-bottom: 1em;
+}
+
+.styled_button{
+  background-color: #007bff;
   color: white;
+  border: none;
+  padding: 0.5em 1em;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1em;
+  margin: 0.5em;
+}
+.pw_row, .pw_head{
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1px solid gray;
+  width: 100%;
 }
 
-.App-link {
-  color: #61dafb;
+
+
+.text{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 20px;
+  font-weight: 500;
+  border-right: 1px solid gray;
+  margin: 5px 0;
+}
+.text:last-child{
+  
+  border-right: none;
+}
+.text_h{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 20px;
+  font-weight: bold;
+}
+.pw_row:hover{
+  background-color: #849fbd;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.pw_row_name{
+  width: 35%;
+}
+
+.pw_row_pw{
+  width: 40%;
+}
+
+.pw_row_delete{
+  flex-grow: 1;
+}
+
+.styled_button:hover {
+  background-color: #0056b3;
+}
+
+table {
+  width: 100%;
+  margin: 1em 0;
+  border-collapse: collapse;
+}
+
+td {
+  padding: 0.5em;
+  text-align: left;
+}
+
+label {
+  font-weight: bold;
+}
+
+input[type="range"] {
+  width: 100%;
+}
+
+#show_range {
+  font-weight: bold;
+}
+
+#password_table {
+  margin-top: 1em;
+  width: 100%;
+  border: 1px solid #ddd;
+  border-collapse: collapse;
+}
+
+#password_table td {
+  border: 1px solid #ddd;
+  padding: 0.5em;
 }
