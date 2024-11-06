@@ -82,3 +82,43 @@ input[type="range"] {
   border: 1px solid #ddd;
   padding: 0.5em;
 }
+
+table > tbody > tr > :nth-child(1) {
+  box-sizing: border-box;
+  width: 200px;
+}
+table > tbody > tr > :nth-child(2) {
+  box-sizing: border-box;
+  width: 300px;
+}
+table > tbody > tr > :nth-child(3) {
+  box-sizing: border-box;
+  width: 200px;
+}
+.password_table_head{
+    margin-top: 16px;
+    display: flex;
+}
+.pw_name {
+    font-weight: bold;
+    width: 200px;
+    text-align: left;
+}
+
+.pw {
+    font-weight: bold;
+    flex-grow: 1;
+    text-align: left;
+}
+
+.password_table_container{
+    max-height: 400px;
+    height: 400px;
+    overflow-y: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.password_table_container::-webkit-scrollbar {
+    display: none;
+}

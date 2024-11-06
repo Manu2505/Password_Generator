@@ -43,15 +43,16 @@
             <input type="file" id="fileInput" name="fileInput">
             <button onclick="exportData()" id="exportFile">Export</button>
         </div>
-        <table id="passwordTable">
-            <thead>
-              <tr>
-                <th>Password Name</th>
-                <th>Password</th>
-              </tr>
-            </thead>
-            <tbody></tbody>
-          </table>
+
+        <div class="password_table_head">
+            <div class="pw_name">Password Name</div>
+            <div class="pw">Password</div>
+        </div>
+        <div class="password_table_container">
+            <table id="passwordTable">
+                <tbody></tbody>
+            </table>
+        </div>
     </main>
     <footer>
 
