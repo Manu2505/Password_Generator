@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="de-de">
 <head>
     <title>Password Generator</title>
     <link href="css_files/stylesheet.css" rel="stylesheet">
@@ -19,10 +19,14 @@
             <button onclick="generatePassword()" id="generateButton">Generate</button>
             <button onclick="saveAndWritePassword()" id="saveButton">Save</button>
         </div>
+        <div id="security_indicator">
+            <div id="security_bar"></div>
+            <p id="security-text"></p>
+        </div>
         <table>
             <tr>
                 <td><label for="lengPassword">How longs should your Password be?</label></td>
-                <td><input onchange="showValueOfRange(this)" type="range" id="lengPassword" name="lengPassword" min="1" max="100" value="20"></td>
+                <td><input onchange="showValueOfRange(this)" type="range" id="lengPassword" name="lengPassword" min="1" max="50" value="20"></td>
                 <td><p id="showRange">20</p></td>
             </tr>
             <tr>

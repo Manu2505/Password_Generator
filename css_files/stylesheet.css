@@ -122,3 +122,13 @@ table > tbody > tr > :nth-child(3) {
 .password_table_container::-webkit-scrollbar {
     display: none;
 }
+
+#security_indicator{
+    width: 70%;
+    margin: auto;
+    border: 1px solid black;
+}
+
+#security_bar{
+    height: 20px;
+}
