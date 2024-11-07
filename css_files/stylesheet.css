@@ -1,143 +1,301 @@
+/* Globales Design */
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f9;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  background-color: #121212; /* Dunkelgrau für den Hintergrund */
   margin: 0;
-  padding: 1em;
+  padding: 0;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  height: 80%;
+  align-items: center;
+  height: 100vh;
+  color: #e0e0e0; /* Helles Grau für den Text */
+  overflow: hidden;
 }
 
-/*header, footer {
-    width: 100%;
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 1em 0;
-}*/
-
+/* Hauptbereich */
 main {
-  background-color: white;
-  padding: 2em;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  width: 80%;
-  max-width: 600px;
+  background-color: #1f1f1f; /* Dunkleres Grau für den Hauptbereich */
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 950px;
   text-align: center;
+  transition: background 0.3s ease-in-out;
 }
 
-#pwd_label {
-  font-size: 1.2em;
-  margin-bottom: 1em;
+/* Überschrift */
+h1 {
+  font-size: 3em;
+  margin-bottom: 30px;
+  font-weight: 500;
+  color: #f0f0f0; /* Helles Grau für bessere Lesbarkeit */
+  letter-spacing: 1px;
 }
 
-button {
-  background-color: #007bff;
-  color: white;
-  border: none;
-  padding: 0.5em 1em;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 1em;
-  margin: 0.5em;
+/* Passwort-Anzeige */
+#passwordLabel {
+  font-size: 1.8em;
+  font-weight: 700;
+  color: #f0f0f0;
+  background-color: #333; /* Dunkelgrau für den Hintergrund */
+  padding: 15px 25px;
+  border-radius: 8px;
+  margin: 20px 0;
+  text-align: center;
+  word-break: break-word;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-in-out;
 }
 
-button:hover {
-  background-color: #0056b3;
+#passwordLabel:hover {
+  background-color: #444; /* Etwas heller bei Hover */
+  transform: scale(1.05);
 }
 
+/* Passwortlängenbereich */
 #pwd_specs {
-    width: 80%;
-    margin: 1em auto;
-    padding: 0.5em 1em;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #333;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Slider für Passwortlänge */
+input[type="range"] {
+  width: 100%;
+  accent-color: #0071e3; /* Apple Blau für den Slider */
+  height: 6px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  background: #555; /* Dunkler Hintergrund für den Slider */
+}
+
+input[type="range"]:focus {
+  outline: none;
+  background-color: #0071e3; /* Apple Blau bei Fokus */
+}
+
+#showRange {
+  display: inline-block;
+  width: 25%;
+  margin-left: 15px;
+  font-weight: bold;
+  color: #0071e3; /* Apple Blau für den Text */
+}
+
+/* Sicherheitsanzeige */
+#security_indicator {
+  margin-top: 20px;
+}
+
+#security_bar {
+  height: 8px;
+  width: 100%;
+  border-radius: 5px;
+  background-color: #ff5f5f; /* Rote Farbe für schwach */
+  transition: background-color 0.5s ease, width 0.5s ease; /* Sanfte Übergänge */
+}
+
+/* Sicherheitsbar-Stile */
+#security_bar.weak {
+  background-color: #ff5f5f; /* Rote Farbe für schwach */
+}
+
+#security_bar.medium {
+  background-color: #f6bc0b; /* Gelbe Farbe für mittel */
+}
+
+#security_bar.strong {
+  background-color: #0071e3; /* Apple Blau für stark */
+}
+
+#security-text {
+  font-size: 1.2em;
+  color: #e0e0e0;
+  margin-top: 10px;
+  font-weight: 500;
+  transition: opacity 0.3s ease;
+}
+
+#security-text.weak {
+  color: #ff5f5f; /* Roter Text für schwach */
+}
+
+#security-text.medium {
+  color: #f6bc0b; /* Gelber Text für mittel */
+}
+
+#security-text.strong {
+  color: #0071e3; /* Apple Blau für stark */
+}
+
+/* Tabelle */
+.password_table_container {
+  max-height: 450px;
+  overflow-y: auto;
+  margin-top: 30px;
+  scrollbar-width: none;
+}
+
+.password_table_container::-webkit-scrollbar {
+  display: none;
 }
 
 table {
   width: 100%;
-  margin: 1em 0;
+  margin: 1.5em 0;
   border-collapse: collapse;
-}
-
-td {
-  padding: 0.5em;
   text-align: left;
 }
 
-#pwd_specs td:last-child {
-    text-align: right;
+.password_table_head {
+  font-size: 1.2em;
+  color: #0071e3; /* Apple Blau */
+  border-bottom: 2px solid #444; /* Dunkelgrau für Trennlinien */
+  padding-bottom: 12px;
 }
 
-input[type="range"] {
-  width: 100%;
+td {
+  padding: 14px;
+  border-bottom: 1px solid #444; /* Dunkelgrau für Trennlinien */
+  color: #e0e0e0;
+  font-size: 1.1em;
 }
 
-#show_range {
-    display: inline-block;
-    width: 20%;
-    margin-left: 15px;
+tr:hover {
+  background-color: #444; /* Dunklerer Hintergrund bei Hover */
+  cursor: pointer;
 }
 
-#password_table {
-  margin-top: 1em;
-  width: 100%;
-  border: 1px solid #ddd;
-  border-collapse: collapse;
-}
-
-#password_table td {
-  border: 1px solid #ddd;
-  padding: 0.5em;
-}
-
-/*table > tbody > tr > :nth-child(1) {
-  box-sizing: border-box;
-  width: 200px;
-}
-table > tbody > tr > :nth-child(2) {
-  box-sizing: border-box;
-  width: 300px;
-}
-table > tbody > tr > :nth-child(3) {
-  box-sizing: border-box;
-  width: 200px;
-}*/
-.password_table_head{
-    margin-top: 16px;
-    display: flex;
-}
+/* Eingabefeld für Passwortname */
 .pw_name {
-    font-weight: bold;
-    width: 200px;
-    text-align: left;
+  font-weight: 600;
+  color: #0071e3; /* Apple Blau */
+  width: 100%;
+  max-width: 300px;
+  margin: 10px auto;
+  padding: 10px 15px;
+  background-color: #333;
+  border: 1px solid #444;
+  border-radius: 8px;
+  color: #e0e0e0;
+  font-size: 1.1em;
+  transition: all 0.3s ease;
 }
 
-.pw {
-    font-weight: bold;
-    flex-grow: 1;
-    text-align: left;
+.pw_name:focus {
+  outline: none;
+  background-color: #444;
+  border: 1px solid #0071e3;
 }
 
-.password_table_container{
-    max-height: 400px;
-    overflow-y: auto;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
+.pw_name::placeholder {
+  color: #888;
 }
 
-.password_table_container::-webkit-scrollbar {
-    display: none;
+/* Button Styling */
+button, .file-btn {
+  padding: 12px 20px;
+  background-color: #0071e3; /* Apple Blau */
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-#security_indicator{
-    width: 70%;
-    margin: auto;
-    border: 1px solid black;
+button:hover, .file-btn:hover {
+  background-color: #005bb5; /* Dunkleres Blau bei Hover */
 }
 
-#security_bar{
-    height: 20px;
+button:active, .file-btn:active {
+  transform: scale(0.98);
+}
+
+/* Eingabefelder und Textarea */
+input[type="text"], input[type="password"], textarea {
+  width: 100%;
+  padding: 12px 16px;
+  background-color: #333;
+  border: 1px solid #444;
+  border-radius: 8px;
+  color: #e0e0e0;
+  font-size: 1.1em;
+  margin: 10px 0;
+  transition: background-color 0.3s ease, border 0.3s ease;
+}
+
+input[type="text"]:focus, input[type="password"]:focus, textarea:focus {
+  outline: none;
+  background-color: #444;
+  border: 1px solid #0071e3;
+}
+
+/* Checkboxen */
+input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  background-color: #444;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+input[type="checkbox"]:checked {
+  background-color: #0071e3; /* Apple Blau bei aktiv */
+}
+
+input[type="checkbox"]:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 113, 227, 0.4);
+}
+
+input[type="checkbox"]:hover {
+  transform: scale(1.1);
+}
+
+/* Datei-Import/Export Bereich */
+.file-area {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  width: 100%;
+  padding: 30px;
+  background-color: #333;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.file-area label {
+  font-size: 1.1em;
+  font-weight: 500;
+  color: #0071e3; /* Apple Blau */
+  margin-bottom: 10px;
+}
+
+.file-area input[type="file"] {
+  display: none;
+}
+
+.file-area .file-btn-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.file-area .file-btn {
+  background-color: #0071e3; /* Apple Blau */
+  color: white;
+  padding: 16px 24px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.2em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.file-area .file-btn:hover {
+  background-color: #005bb5; /* Dunkleres Blau bei Hover */
 }
