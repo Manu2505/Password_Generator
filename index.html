@@ -23,25 +23,36 @@
             <div id="security_bar"></div>
             <p id="security-text"></p>
         </div>
-        <table>
-            <tr>
-                <td><label for="lengPassword">How longs should your Password be?</label></td>
-                <td><input onchange="showValueOfRange(this)" type="range" id="lengPassword" name="lengPassword" min="1" max="50" value="20"></td>
-                <td><p id="showRange">20</p></td>
-            </tr>
-            <tr>
-                <td><label for="capLetters">Capitalized Letters</label></td>
-                <td><label for="smallLetters">Non-capitalized Letters</label></td>
-                <td><label for="numbers">Numbers</label></td>
-                <td><label for="specialChars">Special Characters</label></td>
-            </tr>
-            <tr>
-                <td><input type="checkbox" id="capLetters" name="capLetters" ></td>
-                <td><input type="checkbox" id="smallLetters" name="smallLetters" checked></td>
-                <td><input type="checkbox" id="numbers" name="numbers" ></td>
-                <td><input type="checkbox" id="specialChars" name="specialChars" ></td>
-            </tr>
-        </table>
+        <div id="pwd_specs">
+            <table>
+                <p><b>Password Specifications</b></p>
+                <tr>
+                    <td><label for="lengPassword">Password Length</label></td>
+                    <td><input onchange="showValueOfRange(this)" type="range" id="lengPassword" name="lengPassword" min="1" max="50" value="20"></td>
+                    <td><span id="showRange">20</span></td>
+                </tr>
+                <tr>
+                    <td><label for="capLetters">Capitalized Letters</label></td>
+                    <td></td>
+                    <td><input type="checkbox" id="capLetters" name="capLetters" ></td>
+                </tr>
+                <tr>
+                    <td><label for="smallLetters">Non-capitalized Letters</label></td>
+                    <td></td>
+                    <td><input type="checkbox" id="smallLetters" name="smallLetters" checked></td>
+                </tr>
+                <tr>
+                    <td><label for="numbers">Numbers</label></td>
+                    <td></td>
+                    <td><input type="checkbox" id="numbers" name="numbers" ></td>
+                </tr>
+                <tr>
+                    <td><label for="specialChars">Special Characters</label></td>
+                    <td></td>
+                    <td><input type="checkbox" id="specialChars" name="specialChars" ></td>
+                </tr>
+            </table>
+        </div>
         <div>
             <button onclick="importData()" id="importFile">Import</button>
             <input type="file" id="fileInput" name="fileInput">
