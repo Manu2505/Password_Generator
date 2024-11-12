@@ -33,6 +33,11 @@ h1 {
   letter-spacing: 1px;
 }
 
+#nameOfPassword{
+  max-width: 350px;
+  
+}
+
 /* Passwort-Anzeige */
 #passwordLabel {
   font-size: 1.8em;
