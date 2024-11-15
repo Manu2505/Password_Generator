@@ -10,6 +10,7 @@ body {
   height: 100vh;
   color: #e0e0e0; /* Helles Grau für den Text */
   overflow: hidden;
+  overflow: auto;
 }
 
 /* Hauptbereich */
@@ -155,7 +156,7 @@ table {
   text-align: left;
 }
 
-.password_table_head {
+thead {
   font-size: 1.2em;
   color: #0071e3; /* Apple Blau */
   border-bottom: 2px solid #444; /* Dunkelgrau für Trennlinien */
@@ -210,6 +211,9 @@ button, .file-btn {
   font-size: 1.1em;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
+}
+#fileInput {
+  display:none;
 }
 
 button:hover, .file-btn:hover {

@@ -1,11 +1,19 @@
 # Password_Generator
  Password Generator for Web Programming
 
+# Who did what?
+Manuel Kattau: The core javascript functions including the generation of the password, the saving and displaying of the password with its name as well as the import and export of password files. The html backbone for the generation and the list.
 
-Ich würde mir noch vorstellen, dass wir eine kleine "Bar" haben die mit Farben anzeigt wie sicher das passwort ist, quasi so wie das bei der EInstellung von Passwörtern bei Google oder so ist, also ein schwaches Passwort rot, mittel gelb und gut gesichert grün.
+Manuel H:
 
-Dann würde ich noch sagen, dass wir eine API fetchen mit den Beliebtesten Passwörtern, das bedeutet natürlich auch, dass das die unsichersten Passwörter sind.
+Gideon:
 
-Das Letzte was ich noch sagen würde, wäre das wir in die ganze Geschichte noch ein paar Animationen machen und das ganze generell aufhübschen und es geil aussehen lassen.
+Alexander:
 
-Ihr beiden könnt das mit der Bar machen und die API. Ich würde dann alles schön machen mit CSS und ggf. JS -Alex
+
+# What is the project about?
+The project is a password generator that enables the user to generate passwords and decorate them with a name, essentially creating a list of passwords that the user can store somewhere. The user has the ability to import and export a list of the passwords and the associated Names to the password. 
+The password gets checked for the strenght as well showing when a password needs to be improved to be more secure.
+
+# How to run it?
+Open up the index.html in your browser.

@@ -41,7 +41,7 @@ function saveAndWritePassword() {
   }
 }
 
-function deleteRow(row) {
-  var i = row.rowIndex;
-  document.getElementById("passwordTable").deleteRow(i);
+function deleteRow(button) {
+  var row = button.parentNode.parentNode;
+  row.parentNode.removeChild(row);
 }

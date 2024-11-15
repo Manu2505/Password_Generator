@@ -55,17 +55,17 @@
             </table>
         </div>
         <div>
-            <button onclick="importData()" id="importFile">Import</button>
-            <input type="file" id="fileInput" name="fileInput">
-            <button onclick="exportData()" id="exportFile">Export</button>
+            <button onclick="importData()" id="importFile">Import a File</button>
+            <label class="file-btn"><input onchange="showSelectedFile()" type="file" id="fileInput" name="fileInput">Select a File to Import</label>
+            <button onclick="exportData()" id="exportFile">Export a File</button>
+            <p id="selectedFile">No file selected</p>
         </div>
 
-        <div class="password_table_head">
-            <div class="pw_name">Password Name</div>
-            <div class="pw">Password</div>
-        </div>
         <div class="password_table_container">
             <table id="passwordTable">
+                <thead>
+                    <tr><th>Password Name</th><th>Password</th><th>Delete</th></tr>
+                </thead>
                 <tbody></tbody>
             </table>
         </div>

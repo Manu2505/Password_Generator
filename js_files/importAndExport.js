@@ -1,3 +1,14 @@
+function showSelectedFile() {
+  var fileInput = document.getElementById("fileInput");
+  var file = fileInput.files[0];
+
+  if (file) {
+    document.getElementById("selectedFile").innerText = file.name;
+  } else {
+    document.getElementById("selectedFile").innerText = "No file selected";
+  }
+}
+
 function importData() {
   var fileInput = document.getElementById("fileInput");
   var file = fileInput.files[0];
