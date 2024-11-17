@@ -6,7 +6,7 @@ Manuel Kattau: The core javascript functions including the generation of the pas
 
 Manuel H:
 
-Gideon:
+Gideon: Layout reworks/tweaks, dynamic visualisation of security bar, hiding of components when they are not needed, consistent id naming, css and general code cleaning.
 
 Alexander:
 
