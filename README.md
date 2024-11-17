@@ -4,12 +4,12 @@
 # Who did what?
 Manuel Kattau: The core javascript functions including the generation of the password, the saving and displaying of the password with its name as well as the import and export of password files. The html backbone for the generation and the list.
 
-Manuel H: Tried to setup React, moved everything to React. But we decided against React. Styling of the stored password container and implemented indicator for password strength.
+Manuel H:  Tried to setup React, moved everything to React. But we decided against React. Styling of the stored password container and implemented indicator for password strength.
 
 Gideon: Layout reworks/tweaks, dynamic visualisation of security bar, hiding of components when they are not needed, consistent id naming, css and general code cleaning.
 
 Alexander:
-
+The design and appearance (user interface) of the password generator and a basic, modern layout were created, on which the following details are based.
 
 
 # What is the project about?
