@@ -7,9 +7,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  color: #e0e0e0; 
-  overflow: hidden;
+  min-height: 100vh;
+  color: #e0e0e0;
 }
 
 /* Hauptbereich */
