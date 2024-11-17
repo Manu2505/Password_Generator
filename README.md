@@ -11,6 +11,7 @@ Gideon: Layout reworks/tweaks, dynamic visualisation of security bar, hiding of 
 Alexander:
 
 
+
 # What is the project about?
 The project is a password generator that enables the user to generate passwords and decorate them with a name, essentially creating a list of passwords that the user can store somewhere. The user has the ability to import and export a list of the passwords and the associated Names to the password. 
 The password gets checked for the strenght as well showing when a password needs to be improved to be more secure.

@@ -1,20 +1,20 @@
 /* Globales Design */
 body {
   font-family: 'Helvetica Neue', Arial, sans-serif;
-  background-color: #121212; /* Dunkelgrau für den Hintergrund */
+  background-color: #121212; 
   margin: 0;
   padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  color: #e0e0e0; /* Helles Grau für den Text */
+  color: #e0e0e0; 
   overflow: hidden;
 }
 
 /* Hauptbereich */
 main {
-  background-color: #1f1f1f; /* Dunkleres Grau für den Hauptbereich */
+  background-color: #1f1f1f; 
   padding: 40px;
   border-radius: 20px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
@@ -29,7 +29,7 @@ h1 {
   font-size: 2.5em;
   margin-bottom: 1.2em;
   font-weight: 500;
-  color: #f0f0f0; /* Helles Grau für bessere Lesbarkeit */
+  color: #f0f0f0; 
   letter-spacing: 0.1em;
 }
 
@@ -57,11 +57,11 @@ div {
 
 #pwd_specs_footer {
   margin-top: auto;
-  display: flex; /* Use flexbox */
-  justify-content: flex-start; /* Space out title and buttons */
-  align-items: center; /* Align items vertically in the center */
+  display: flex; 
+  justify-content: flex-start; 
+  align-items: center; 
   gap: 1.5em;
-  padding: 0 1em; /* Add padding for spacing */
+  padding: 0 1em; 
 }
 
 #pwd_specs_security_text {
@@ -77,24 +77,24 @@ div {
   display: flex;
   align-items: center;
   height: 8px;
-  width: 100%; /* Take full width of parent */
-  max-width: 65%; /* Limit the bar's width */
-  background-color: #333; /* Background for the bar container */
+  width: 100%; 
+  max-width: 65%; 
+  background-color: #333; 
   border-radius: 5px;
-  position: relative; /* For proper child positioning */
-  overflow: hidden; /* Prevent overflow of inner bar */
+  position: relative; 
+  overflow: hidden; 
 }
 
 #pwd_specs_security_indicator div {
   height: 100%;
-  width: 0; /* Start at 0% for dynamic updates */
-  background-color: #ff5f5f; /* Default weak state color */
+  width: 0; 
+  background-color: #ff5f5f; 
   border-radius: 5px;
-  transition: background-color 0.5s ease, width 0.5s ease; /* Smooth animation */
+  transition: background-color 0.5s ease, width 0.5s ease; 
 }
 
 #pwd_generate_button {
-  flex-shrink: 0; /* Prevent the button from shrinking */
+  flex-shrink: 0; 
   margin-left: auto;
   padding: 0.8em 1.5em;
   background-color: #0071e3;
@@ -121,7 +121,7 @@ div {
 
 /* Passwort-Anzeige */
 #pwd_label {
-  background-color: #333; /* Dunkelgrau für den Hintergrund */
+  background-color: #333; 
   padding: 15px 25px;
   border-radius: 8px;
   margin: 20px 0;
@@ -132,7 +132,7 @@ div {
 }
 
 #pwd_label:hover {
-  background-color: #444; /* Etwas heller bei Hover */
+  background-color: #444; 
   transform: scale(1.02);
 }
 
@@ -150,22 +150,22 @@ input[type="text"] {
 /* Slider für Passwortlänge */
 input[type="range"] {
   width: 100%;
-  accent-color: #0071e3; /* Apple Blau für den Slider */
+  accent-color: #0071e3; 
   height: 6px;
   border-radius: 5px;
   transition: background-color 0.3s ease;
-  background: #555; /* Dunkler Hintergrund für den Slider */
+  background: #555; 
 }
 
 input[type="range"]:focus {
   outline: none;
-  background-color: #0071e3; /* Apple Blau bei Fokus */
+  background-color: #0071e3; 
 }
 
 #pwd_specs_length {
   margin-left: 15px;
   font-weight: bold;
-  color: #ffffff; /* Apple Blau für den Text */
+  color: #ffffff;              
 }
 
 /* Tabelle */
@@ -189,27 +189,26 @@ table {
 
 thead {
   font-size: 1.2em;
-  color: #0071e3; /* Apple Blau */
-  border-bottom: 2px solid #444; /* Dunkelgrau für Trennlinien */
+  color: #0071e3; 
+  border-bottom: 2px solid #444;
   padding-bottom: 12px;
 }
 
 td {
   padding: 14px 0 14px 0;
-  border-bottom: 1px solid #444; /* Dunkelgrau für Trennlinien */
+  border-bottom: 1px solid #444; 
   color: #e0e0e0;
   font-size: 1.1em;
 }
 
 tr:hover {
-  background-color: #444; /* Dunklerer Hintergrund bei Hover */
+  background-color: #444; 
   cursor: pointer;
 }
 
 /* Eingabefeld für Passwortname */
 #pwd_saver_input {
   font-weight: 600;
-  /* Apple Blau */
   width: 100%;
   max-width: 300px;
   margin: 10px auto;
@@ -235,7 +234,7 @@ tr:hover {
 /* Button Styling */
 button, #pwd_files_button {
   padding: 12px 20px;
-  background-color: #0071e3; /* Apple Blau */
+  background-color: #0071e3; 
   color: white;
   border: none;
   border-radius: 10px;
@@ -249,7 +248,7 @@ button, #pwd_files_button {
 }
 
 button:hover, #pwd_files_button:hover {
-  background-color: #005bb5; /* Dunkleres Blau bei Hover */
+  background-color: #005bb5; 
 }
 
 button:active, #pwd_files_button:active {
@@ -285,7 +284,7 @@ input[type="checkbox"] {
 }
 
 input[type="checkbox"]:checked {
-  background-color: #0071e3; /* Apple Blau bei aktiv */
+  background-color: #0071e3; 
 }
 
 input[type="checkbox"]:focus {
