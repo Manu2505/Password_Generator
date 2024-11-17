@@ -1,21 +1,21 @@
 function showSelectedFile() {
-  var fileInput = document.getElementById("fileInput");
-  var file = fileInput.files[0];
+  const fileInput = document.getElementById("pwd_files_selected");
+  const file = fileInput.files[0];
 
   if (file) {
-    document.getElementById("selectedFile").innerText = file.name;
+    document.getElementById("pwd_files_selected").innerText = file.name;
   } else {
-    document.getElementById("selectedFile").innerText = "No file selected";
+    document.getElementById("pwd_files_selected").innerText = "No file selected";
   }
 }
 
 function importData() {
-  var fileInput = document.getElementById("fileInput");
-  var file = fileInput.files[0];
+  const fileInput = document.getElementById("pwd_files_input");
+  const file = fileInput.files[0];
 
   if (file) {
     console.log("File selected: ", file.name);
-    var reader = new FileReader();
+    const reader = new FileReader();
     reader.onload = function (e) {
       var contents = e.target.result;
       var jsonData = JSON.parse(contents);
@@ -29,9 +29,9 @@ function importData() {
 }
 
 function displayData(data) {
-  var table = document
-    .getElementById("passwordTable")
-    .getElementsByTagName("tbody")[0];
+  const table = document
+      .getElementById("pwd_saver_result_table")
+      .getElementsByTagName("tbody")[0];
 
   data.forEach(function (jsonData) {
     insertDataInTable(table, jsonData);
@@ -39,29 +39,34 @@ function displayData(data) {
 }
 
 function exportData() {
-  var table = document
-    .getElementById("passwordTable")
-    .getElementsByTagName("tbody")[0];
-  var rows = table.getElementsByTagName("tr");
-  var data = [];
+  const table = document
+      .getElementById("pwd_saver_result_table")
+      .getElementsByTagName("tbody")[0];
+  const rows = table.getElementsByTagName("tr");
+  const data = [];
 
-  for (var i = 0; i < rows.length; i++) {
-    var cells = rows[i].getElementsByTagName("td");
-    var rowData = {
+  for (let i = 0; i < rows.length; i++) {
+    const cells = rows[i].getElementsByTagName("td");
+    const rowData = {
       name: cells[0].innerText,
       password: cells[1].innerText,
     };
     data.push(rowData);
   }
 
-  var jsonData = JSON.stringify(data, null, 2);
-  var blob = new Blob([jsonData], { type: "application/json" });
-  var url = URL.createObjectURL(blob);
+  const jsonData = JSON.stringify(data, null, 2);
+  const blob = new Blob([jsonData], {type: "application/json"});
+  const url = URL.createObjectURL(blob);
 
-  var a = document.createElement("a");
+  const a = document.createElement("a");
   a.href = url;
   a.download = "passwords.json";
   document.body.appendChild(a);
   a.click();
   document.body.removeChild(a);
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+  document.getElementById("pwd_saver_button").addEventListener("click", saveAndWritePassword);
+  document.getElementById("pwd_files_input").addEventListener("change", showSelectedFile);
+});

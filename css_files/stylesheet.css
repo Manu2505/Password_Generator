@@ -10,7 +10,6 @@ body {
   height: 100vh;
   color: #e0e0e0; /* Helles Grau für den Text */
   overflow: hidden;
-  overflow: auto;
 }
 
 /* Hauptbereich */
@@ -27,45 +26,125 @@ main {
 
 /* Überschrift */
 h1 {
-  font-size: 3em;
-  margin-bottom: 30px;
+  font-size: 2.5em;
+  margin-bottom: 1.2em;
   font-weight: 500;
   color: #f0f0f0; /* Helles Grau für bessere Lesbarkeit */
-  letter-spacing: 1px;
+  letter-spacing: 0.1em;
 }
 
-#nameOfPassword{
+/* Abschnitte */
+div {
+  margin-top: 20px;
+}
+
+/* Passwortlängenbereich */
+#pwd_specs {
+  position: relative;
+  padding: 20px;
+  background-color: #333;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+#pwd_specs_table td {
+  padding-left: 1em;
+}
+
+#pwd_specs_table td:last-child {
+  text-align: center;
+}
+
+#pwd_specs_footer {
+  margin-top: auto;
+  display: flex; /* Use flexbox */
+  justify-content: flex-start; /* Space out title and buttons */
+  align-items: center; /* Align items vertically in the center */
+  gap: 1.5em;
+  padding: 0 1em; /* Add padding for spacing */
+}
+
+#pwd_specs_security_text {
+  width: 15%;
+  font-size: 1.1em;
+  text-align: left;
+  color: #e0e0e0;
+  transition: opacity 0.3s ease;
+  flex-shrink: 0;
+}
+
+#pwd_specs_security_indicator {
+  display: flex;
+  align-items: center;
+  height: 8px;
+  width: 100%; /* Take full width of parent */
+  max-width: 65%; /* Limit the bar's width */
+  background-color: #333; /* Background for the bar container */
+  border-radius: 5px;
+  position: relative; /* For proper child positioning */
+  overflow: hidden; /* Prevent overflow of inner bar */
+}
+
+#pwd_specs_security_indicator div {
+  height: 100%;
+  width: 0; /* Start at 0% for dynamic updates */
+  background-color: #ff5f5f; /* Default weak state color */
+  border-radius: 5px;
+  transition: background-color 0.5s ease, width 0.5s ease; /* Smooth animation */
+}
+
+#pwd_generate_button {
+  flex-shrink: 0; /* Prevent the button from shrinking */
+  margin-left: auto;
+  padding: 0.8em 1.5em;
+  background-color: #0071e3;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#pwd_generate_button:hover {
+  background-color: #005bb5;
+}
+
+#pwd_saver div {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+
+#pwd_saver_input{
   max-width: 350px;
-  
 }
 
 /* Passwort-Anzeige */
-#passwordLabel {
-  font-size: 1.8em;
-  font-weight: 700;
-  color: #f0f0f0;
+#pwd_label {
   background-color: #333; /* Dunkelgrau für den Hintergrund */
   padding: 15px 25px;
   border-radius: 8px;
   margin: 20px 0;
-  text-align: center;
+  align-items: center;
   word-break: break-word;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease-in-out;
 }
 
-#passwordLabel:hover {
+#pwd_label:hover {
   background-color: #444; /* Etwas heller bei Hover */
-  transform: scale(1.05);
+  transform: scale(1.02);
 }
 
-/* Passwortlängenbereich */
-#pwd_specs {
-  margin-top: 30px;
-  padding: 20px;
-  background-color: #333;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+#pwd {
+  margin: 0;
+  font-size: 1.6em;
+  font-weight: 700;
+  color: #f0f0f0;
+}
+
+input[type="text"] {
+  font-size: 1.1em;
 }
 
 /* Slider für Passwortlänge */
@@ -83,69 +162,21 @@ input[type="range"]:focus {
   background-color: #0071e3; /* Apple Blau bei Fokus */
 }
 
-#showRange {
-  display: inline-block;
-  width: 25%;
+#pwd_specs_length {
   margin-left: 15px;
   font-weight: bold;
-  color: #0071e3; /* Apple Blau für den Text */
-}
-
-/* Sicherheitsanzeige */
-#security_indicator {
-  margin-top: 20px;
-}
-
-#security_bar {
-  height: 8px;
-  width: 100%;
-  border-radius: 5px;
-  background-color: #ff5f5f; /* Rote Farbe für schwach */
-  transition: background-color 0.5s ease, width 0.5s ease; /* Sanfte Übergänge */
-}
-
-/* Sicherheitsbar-Stile */
-#security_bar.weak {
-  background-color: #ff5f5f; /* Rote Farbe für schwach */
-}
-
-#security_bar.medium {
-  background-color: #f6bc0b; /* Gelbe Farbe für mittel */
-}
-
-#security_bar.strong {
-  background-color: #0071e3; /* Apple Blau für stark */
-}
-
-#security-text {
-  font-size: 1.2em;
-  color: #e0e0e0;
-  margin-top: 10px;
-  font-weight: 500;
-  transition: opacity 0.3s ease;
-}
-
-#security-text.weak {
-  color: #ff5f5f; /* Roter Text für schwach */
-}
-
-#security-text.medium {
-  color: #f6bc0b; /* Gelber Text für mittel */
-}
-
-#security-text.strong {
-  color: #0071e3; /* Apple Blau für stark */
+  color: #ffffff; /* Apple Blau für den Text */
 }
 
 /* Tabelle */
-.password_table_container {
+#pwd_saver_result_container {
   max-height: 450px;
   overflow-y: auto;
   margin-top: 30px;
   scrollbar-width: none;
 }
 
-.password_table_container::-webkit-scrollbar {
+#pwd_saver_result_container::-webkit-scrollbar {
   display: none;
 }
 
@@ -164,7 +195,7 @@ thead {
 }
 
 td {
-  padding: 14px;
+  padding: 14px 0 14px 0;
   border-bottom: 1px solid #444; /* Dunkelgrau für Trennlinien */
   color: #e0e0e0;
   font-size: 1.1em;
@@ -176,9 +207,9 @@ tr:hover {
 }
 
 /* Eingabefeld für Passwortname */
-.pw_name {
+#pwd_saver_input {
   font-weight: 600;
-  color: #0071e3; /* Apple Blau */
+  /* Apple Blau */
   width: 100%;
   max-width: 300px;
   margin: 10px auto;
@@ -191,18 +222,18 @@ tr:hover {
   transition: all 0.3s ease;
 }
 
-.pw_name:focus {
+#pwd_saver_input:focus {
   outline: none;
   background-color: #444;
   border: 1px solid #0071e3;
 }
 
-.pw_name::placeholder {
+#pwd_saver_input::placeholder {
   color: #888;
 }
 
 /* Button Styling */
-button, .file-btn {
+button, #pwd_files_button {
   padding: 12px 20px;
   background-color: #0071e3; /* Apple Blau */
   color: white;
@@ -212,15 +243,16 @@ button, .file-btn {
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
-#fileInput {
+
+#pwd_files_input {
   display:none;
 }
 
-button:hover, .file-btn:hover {
+button:hover, #pwd_files_button:hover {
   background-color: #005bb5; /* Dunkleres Blau bei Hover */
 }
 
-button:active, .file-btn:active {
+button:active, #pwd_files_button:active {
   transform: scale(0.98);
 }
 
@@ -266,45 +298,49 @@ input[type="checkbox"]:hover {
 }
 
 /* Datei-Import/Export Bereich */
-.file-area {
+#pwd_files {
   display: flex;
   flex-direction: column;
-  gap: 25px;
   width: 100%;
-  padding: 30px;
   background-color: #333;
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
-.file-area label {
-  font-size: 1.1em;
-  font-weight: 500;
-  color: #0071e3; /* Apple Blau */
-  margin-bottom: 10px;
-}
-
-.file-area input[type="file"] {
-  display: none;
-}
-
-.file-area .file-btn-container {
+#pwd_files div {
   display: flex;
-  justify-content: space-between;
-  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
 }
 
-.file-area .file-btn {
-  background-color: #0071e3; /* Apple Blau */
-  color: white;
-  padding: 16px 24px;
-  border: none;
-  border-radius: 10px;
-  font-size: 1.2em;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
+/*.file_options label {*/
+/*  font-size: 1.1em;*/
+/*  font-weight: 500;*/
+/*  color: #0071e3; !* Apple Blau *!*/
+/*}*/
 
-.file-area .file-btn:hover {
-  background-color: #005bb5; /* Dunkleres Blau bei Hover */
-}
+/*.file_options input[type="file"] {*/
+/*  display: none;*/
+/*}*/
+
+/*.file_options .file-btn-container {*/
+/*  display: flex;*/
+/*  justify-content: space-between;*/
+/*  gap: 20px;*/
+/*}*/
+
+/*.file_options .file-btn {*/
+/*  background-color: #0071e3; !* Apple Blau *!*/
+/*  color: white;*/
+/*  padding: 16px 24px;*/
+/*  border: none;*/
+/*  border-radius: 10px;*/
+/*  font-size: 1.1em;*/
+/*  cursor: pointer;*/
+/*  transition: background-color 0.3s ease;*/
+/*}*/
+
+/*.file_options .file-btn:hover {*/
+/*  background-color: #005bb5; !* Dunkleres Blau bei Hover *!*/
+/*}*/

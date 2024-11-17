@@ -12,57 +12,63 @@
 
     </header>
     <main>
-        <div>
-            <input type="text" id="nameOfPassword" name="nameOfPassword">
-            <br>
-            <label for="nameOfPassword">The name of your password</label>
-            <p id="passwordLabel">Here could be your Password. Generate it now!</p>
-            <button onclick="generatePassword()" id="generateButton">Generate</button>
-            <button onclick="saveAndWritePassword()" id="saveButton">Save</button>
-        </div>
-        <div id="security_indicator">
-            <div id="security_bar"></div>
-            <p id="security-text"></p>
-        </div>
+        <h1>Password Generator</h1>
         <div id="pwd_specs">
-            <p><b>Password Specifications</b></p>
-            <table>
+            <table id="pwd_specs_table">
                 <tr>
-                    <td><label for="lengPassword">Password Length</label></td>
-                    <td><input onchange="showValueOfRange(this)" type="range" id="lengPassword" name="lengPassword" min="1" max="50" value="20"></td>
-                    <td><span id="showRange">20</span></td>
+                    <td><label for="pwd_specs_length_selection">Password Length</label></td>
+                    <td><input type="range" id="pwd_specs_length_selection" min="1" max="50" value="20"></td>
+                    <td><span id="pwd_specs_length">20</span></td>
                 </tr>
                 <tr>
-                    <td><label for="capLetters">Capitalized Letters</label></td>
+                    <td><label for="pwd_specs_caps">Capitalized Letters</label></td>
                     <td></td>
-                    <td><input type="checkbox" id="capLetters" name="capLetters" ></td>
+                    <td><input type="checkbox" id="pwd_specs_caps"></td>
                 </tr>
                 <tr>
-                    <td><label for="smallLetters">Non-capitalized Letters</label></td>
+                    <td><label for="pwd_specs_lowercase">Non-capitalized Letters</label></td>
                     <td></td>
-                    <td><input type="checkbox" id="smallLetters" name="smallLetters" checked></td>
+                    <td><input type="checkbox" id="pwd_specs_lowercase" checked></td>
                 </tr>
                 <tr>
-                    <td><label for="numbers">Numbers</label></td>
+                    <td><label for="pwd_specs_numbers">Numbers</label></td>
                     <td></td>
-                    <td><input type="checkbox" id="numbers" name="numbers" ></td>
+                    <td><input type="checkbox" id="pwd_specs_numbers"></td>
                 </tr>
                 <tr>
-                    <td><label for="specialChars">Special Characters</label></td>
+                    <td><label for="pwd_specs_special">Special Characters</label></td>
                     <td></td>
-                    <td><input type="checkbox" id="specialChars" name="specialChars" ></td>
+                    <td><input type="checkbox" id="pwd_specs_special"></td>
                 </tr>
             </table>
+            <div id="pwd_specs_footer">
+                <span id="pwd_specs_security_text"></span>
+                <div id="pwd_specs_security_indicator">
+                    <div></div>
+                </div>
+                <button id="pwd_generate_button">Generate</button>
+            </div>
         </div>
-        <div>
-            <button onclick="importData()" id="importFile">Import a File</button>
-            <label class="file-btn"><input onchange="showSelectedFile()" type="file" id="fileInput" name="fileInput">Select a File to Import</label>
-            <button onclick="exportData()" id="exportFile">Export a File</button>
-            <p id="selectedFile">No file selected</p>
+        <div id="pwd_label">
+            <p id="pwd">Here could be your Password. Generate it now!</p>
         </div>
-
-        <div class="password_table_container">
-            <table id="passwordTable">
+        <div id="pwd_saver">
+            <div>
+                <label for="pwd_saver_input">Name of your password:</label>
+                <input type="text" id="pwd_saver_input" name="nameOfPassword">
+                <button id="pwd_saver_button">Save</button>
+            </div>
+        </div>
+        <div id="pwd_files">
+            <div>
+                <button onclick="importData()" id="pwd_files_import">Import a File</button>
+                <label id="pwd_files_button"><input type="file" id="pwd_files_input" name="pwd_files_input">Select a File to Import</label>
+                <button onclick="exportData()" id="pwd_files_export">Export a File</button>
+            </div>
+            <p id="pwd_files_selected">No file selected</p>
+        </div>
+        <div id="pwd_saver_result_container">
+            <table id="pwd_saver_result_table">
                 <thead>
                     <tr><th>Password Name</th><th>Password</th><th>Delete</th></tr>
                 </thead>
